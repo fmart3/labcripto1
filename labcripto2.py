@@ -10,10 +10,10 @@ def enviar_stealth_icmp(destino, mensaje):
         print(f"Paquete {i+1}: enviado caracter '{caracter}'")
         time.sleep(0.3)  # retraso entre paquetes para parecer tráfico natural
 
-    # Último paquete con 'b' como señal de fin
-    paquete_final = IP(dst=destino)/ICMP(type=8)/'b'
+    # Último paquete con '+' como señal de fin
+    paquete_final = IP(dst=destino)/ICMP(type=8)/'+'
     sr1(paquete_final, timeout=1, verbose=0)
-    print("Paquete final enviado con 'b' para indicar fin del mensaje.")
+    print("Paquete final enviado con '+' para indicar fin del mensaje.")
 
 # Mostrar un ping normal para comparar
 def ping_normal(destino):

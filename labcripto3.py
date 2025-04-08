@@ -44,7 +44,7 @@ def procesar_paquete(paquete):
         if len(carga) == 1:
             char = carga.decode('utf-8', errors='ignore')
             if char.isalpha() or char == ' ':  # aceptar letras y espacios
-                if char == 'b':  # carácter de cierre
+                if char == '+':  # carácter de cierre
                     print("\n[+] Mensaje recibido (cifrado):", mensaje)
                     probar_todos_los_desplazamientos(mensaje)
                     return True
